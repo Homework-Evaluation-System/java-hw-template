@@ -22,9 +22,7 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
           cache: maven
-      - name: compile and test
+      - name: compile and test and lint
         run: mvn  clean test
-      - name: lint
-        run: mvn checkstyle:checkstyle
       - name: lint result print
         run: cat target/checkstyle-result.xml
