@@ -27,4 +27,4 @@ jobs:
       - name: lint
         run: mvn checkstyle:checkstyle
       - name: lint result print
-        run: cat target/site/checkstyle-result.xml
+        run: cat target/checkstyle-result.xml
