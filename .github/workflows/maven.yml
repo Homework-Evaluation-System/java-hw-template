@@ -28,9 +28,10 @@ jobs:
         run: mvn clean test
       - name: deneme
         run: |
-        cd target
-        ls
-
+          ls
+          cd target
+          ls
+          
 
 
 
