@@ -27,7 +27,7 @@ jobs:
       - name: compile and test and lint
         run: mvn clean test checkstyle:checkstyle
       - name: deneme
-        run: ls target
+        run: cat target/checkstyle-result.xml
 
 
 
