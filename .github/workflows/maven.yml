@@ -24,18 +24,15 @@ jobs:
           cache: maven
       - name: compile and test and lint
         run: mvn  clean test
-      - name: lint result print
-        run: cat target/checkstyle-result.xml
-      - name: 'Download a Build Artifact'
-      description: 'Download a build artifact that was previously uploaded in the workflow by the upload-artifact action'
-      author: 'GitHub'
-      inputs:
-        name:
-          description: 'Artifact name'
-          required: false
-        path:
-          description: 'Destination path'
-          required: false
-      runs:
-        using: 'node16'
-        main: 'dist/index.js'
+
+
+  - uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+  - uses: pmd/pmd-github-action@v1
+    with:
+      rulesets: 'ruleset.xml'
+
+
+
