@@ -25,7 +25,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: compile and test and lint
-        run: mvn clean test
+        run: mvn clean test checkstyle:checkstyle
       - name: deneme
         run: ls target
 
