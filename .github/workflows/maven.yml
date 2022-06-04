@@ -15,6 +15,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+
+      - uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+      - uses: pmd/pmd-github-action@v1
+        with:
+          rulesets: 'target/pmd/rulesets/maven-pmd-plugin-default.xml'
       - uses: actions/checkout@v3
       - name: Set up JDK 11
         uses: actions/setup-java@v3
@@ -24,7 +32,6 @@ jobs:
           cache: maven
       - name: compile and test and lint
         run: mvn  clean test
-
 
 
 
