@@ -26,3 +26,16 @@ jobs:
         run: mvn  clean test
       - name: lint result print
         run: cat target/checkstyle-result.xml
+      -name: 'Download a Build Artifact'
+      description: 'Download a build artifact that was previously uploaded in the workflow by the upload-artifact action'
+      author: 'GitHub'
+      inputs:
+        name:
+          description: 'Artifact name'
+          required: false
+        path:
+          description: 'Destination path'
+          required: false
+      runs:
+        using: 'node16'
+        main: 'dist/index.js'
