@@ -27,9 +27,8 @@ jobs:
       - name: compile and test and lint
         run: mvn clean test
       - name: deneme
-        run: |
-        cd target
-        ls
+        run: ls /target
+
 
 
 
