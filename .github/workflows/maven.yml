@@ -28,8 +28,8 @@ jobs:
         run: mvn clean test checkstyle:checkstyle
       - name: deneme
         run: cat target/checkstyle-result.xml
-      name: timeout
-      - run: mvn compile
+      - name : comiple
+        run : javac --version
 
 
 
